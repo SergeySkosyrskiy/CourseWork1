@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employee {
     private String fullName;
     private int departNum;
@@ -43,18 +45,17 @@ public class Employee {
                 ", зарплата сотрудника: " + salary + " руб.";
     }
 
-//Не отрабатывают методы
 
-  /* public boolean equals(Object o) {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return id == employee.id && Object.equals(fullName, employee.fullName);
+        return id == employee.id && Objects.equals(fullName, employee.fullName);
+
     }
 
     public int hashCode() {
-        return Object.hash(fullName,id);
-    }*/
-
+        return Objects.hash(fullName, id);
+    }
 
 }

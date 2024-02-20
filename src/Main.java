@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -15,6 +16,8 @@ public class Main {
         employeeBook.addEmployee("Константинов Константин Константинович", 3, 72_900);
         employeeBook.addEmployee("Леонидов Леонид Леонидович", 4, 50_500);
         employeeBook.addEmployee("Михайлов Михаил Михайлович", 5, 94_400);
+
+
         System.out.println();
         //8a
         employeeBook.printAllEmployees();
@@ -22,8 +25,14 @@ public class Main {
         //8b
         System.out.println("Cумма затрат на ЗП в месяц = " + employeeBook.summSalaryMonth());
         //8c
-        System.out.println("Cотрудник с минимальной ЗП = " + employeeBook.employeeMinSalary());
-        //8d
+        Employee getMinSalary = employeeBook.minSalary();
+        if(getMinSalary != null) {
+            System.out.println("Cотрудник с минимальной ЗП = " + employeeBook.minSalary().getFullName());
+        }
+        else {
+            System.out.println(" No");
+        }
+        //8d*/
         System.out.println("Cотрудника с максимальной ЗП = " + employeeBook.employeeMaxSalary());
         //8e
         System.out.println("Средняя зп = " + employeeBook.midlSalaryMonth());
